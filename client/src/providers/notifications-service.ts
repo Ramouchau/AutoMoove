@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Socket } from 'ng-socket-io';
-import { AddedToList, UpdateListResponse, updateItemResponce } from '../interfaces/list-interfaces';
+import { AddedToList, updateItemResponce } from '../interfaces/list-interfaces';
 import { AuthService } from './auth-service';
 import { UserToken } from '../interfaces/auth-socket-interfaces';
 
