@@ -7,7 +7,8 @@ export interface UserRegisterResponse {
 export interface UserRegisterRequest {
 	email: string,
 	username: string,
-	password: string
+	password: string,
+	phoneNumber: string,
 }
 
 export interface UserLoginResponse {
