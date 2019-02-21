@@ -23,6 +23,7 @@ export async function userRegister(data: UserRegisterRequest, socket: Socket) {
 	if (!user) {
 		const newUser = new User()
 		newUser.email = data.email
+		newUser.phoneNumber = data.phoneNumber
 		newUser.username = data.username
 		newUser.profilePicPath = ""
 		hash(data.password, 10, (err, pass) => {
@@ -31,12 +32,13 @@ export async function userRegister(data: UserRegisterRequest, socket: Socket) {
 			}
 			newUser.password = pass;
 			connection.manager.save(newUser).then((res) => {
-				let payload = { id: res.id, email: res.email, username: res.username }
+				let payload = { id: res.id, email: res.email, username: res.username, phoneNumber: res.phoneNumber }
 				response.token = jwt.sign(payload, '©oÜΓŠ')
 				socket.emit('register', response)
 			});
 
 		})
+
 	}
 	else {
 		response.status = "Email already in use"
