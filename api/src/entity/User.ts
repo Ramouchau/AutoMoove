@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, ManyToMany } from "typeorm";
-import { List } from "./List";
 
 @Entity()
 export class User {
@@ -23,13 +22,4 @@ export class User {
 	)
 
 	profilePicPath: string;
-
-	@OneToMany(type => List, list => list.owner, {onDelete:'CASCADE'})
-	owner_list: List[]
-
-	@ManyToMany(type => List, list => list.users, {onDelete:'CASCADE'})
-	users_list: List[];
-
-	@ManyToMany(type => List, list => list.watchers, {onDelete:'CASCADE'})
-	watcher_list: List[];
 }
