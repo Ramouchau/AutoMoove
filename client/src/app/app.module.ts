@@ -9,15 +9,6 @@ import { AuthService } from "../providers/auth-service";
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
-import { CreatelistPage } from '../pages/createlist/createlist';
-import {ListService} from "../providers/list-service";
-import {ListPage} from "../pages/list/list";
-import {GetListPage} from "../pages/get-list/get-list";
-import {AddItemModalPage} from "../pages/add-item-modal/add-item-modal";
-import {DebounceClickDirective} from "../directives/DebounceClick";
-import {AddUserModalPage} from "../pages/add-user-modal/add-user-modal";
-import { LocalNotifications } from '@ionic-native/local-notifications';
-import { NotificationsServiceProvider } from '../providers/notifications-service';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000/', options: {} };
 
@@ -26,12 +17,6 @@ const config: SocketIoConfig = { url: 'http://localhost:3000/', options: {} };
 		MyApp,
 		LoginPage,
 		ProfilePage,
-		CreatelistPage,
-		ListPage,
-		GetListPage,
-		AddItemModalPage,
-		AddUserModalPage,
-		DebounceClickDirective
 	],
 	imports: [
 		BrowserModule,
@@ -44,19 +29,11 @@ const config: SocketIoConfig = { url: 'http://localhost:3000/', options: {} };
 		MyApp,
 		LoginPage,
 		ProfilePage,
-		CreatelistPage,
-		ListPage,
-		GetListPage,
-		AddItemModalPage,
-		AddUserModalPage
 	],
 	providers: [
 		StatusBar,
 		SplashScreen,
 		AuthService,
-		ListService,
-		LocalNotifications,
-    NotificationsServiceProvider,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
 	]
 })

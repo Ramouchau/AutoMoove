@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
-import { NotificationsServiceProvider } from '../providers/notifications-service';
 import { Storage } from '@ionic/storage';
 import {AuthService} from "../providers/auth-service";
 
@@ -15,7 +14,7 @@ import {AuthService} from "../providers/auth-service";
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 	rootPage: any = LoginPage;
-	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, notificationSerice: NotificationsServiceProvider, public storage: Storage, public auth: AuthService) {
+	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage: Storage, public auth: AuthService) {
 		platform.ready().then(() => {
 			statusBar.styleDefault();
 		});

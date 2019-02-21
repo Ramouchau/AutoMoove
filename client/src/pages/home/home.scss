@@ -6,6 +6,12 @@ page-home {
     background-color: #ff7c00;
   }
 }
+
+
+#map {
+	width: 100%;
+	height: calc(100% - 20px);
+}
 list-1-page .list-big-content .list-big ion-list .list-item .content-row {
   align-items: center;
 }
