@@ -18,7 +18,7 @@ export async function getProfile(data: GetProfileRequest, socket: Socket) {
 			return;
 		}
 
-		responce = { code: 200, status: 'ok', email: user.email, username: user.username };
+		responce = { code: 200, status: 'ok', email: user.email, username: user.username, phoneNumber: user.phoneNumber, visa: user.visa };
 		socket.emit('get-profile', responce);
 	}
 	catch (e) {
