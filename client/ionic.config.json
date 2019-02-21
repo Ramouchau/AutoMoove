@@ -1,0 +1,7 @@
+{
+  "name": "Course-ensemble_client",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

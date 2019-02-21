@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ajout une course
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios">Cancel</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Nom article</ion-label>
+      <ion-input [(ngModel)]="item.name" type="text" required></ion-input>
+    </ion-item>
+        <ion-item>
+          <ion-label>Quantité</ion-label>
+          <ion-input [(ngModel)]="item.quantity"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Déjà acheté</ion-label>
+          <ion-checkbox [(ngModel)]="checked"></ion-checkbox>
+        </ion-item>
+    <button ion-button type="submit" block (click)="add()">{{edit ? "Modifier" : "Ajouter"}}</button>
+  </ion-list>
+</ion-content>
