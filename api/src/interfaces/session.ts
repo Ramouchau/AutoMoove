@@ -3,7 +3,8 @@ import * as jwt from 'jsonwebtoken';
 export class Session {
     id: number;
     email: string;
-    username: string;
+		username: string;
+		phoneNumber: string;
 
     constructor(token: string) {
 

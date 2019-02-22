@@ -19,11 +19,13 @@ export class ProfilePage {
 	public user: UserToken = {
     id: 0,
     email: "",
-    username: ""
+		username: "",
+		phoneNumber: ""
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,  private auth: AuthService) {
-		this.user = this.auth.user
+		if (this.auth.user)
+			this.user = this.auth.user
   }
 
   ionViewDidLoad() {

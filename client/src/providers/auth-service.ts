@@ -34,11 +34,13 @@ export class AuthService {
 				console.log(this.user)
 				observer.next(this.user)
 				observer.complete()
+				return
 			}
 
 			this.storage.get('token').then(storageToken => {
 				this.socket.emit('get-user', {token: storageToken})
 				this.socket.fromEventOnce<GetUserResponse>("get-user").then(res => {
+
 					if (res.code != 200)
 						observer.error(res.status)
 

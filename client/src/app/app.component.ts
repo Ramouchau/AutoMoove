@@ -25,13 +25,11 @@ export class MyApp {
 	}
 
 	public logout()
-    {
-        this.auth.logout().subscribe(res =>
-        {
-            this.nav.push(LoginPage);
-        });
-    }
-
-
+	{
+			this.auth.logout().subscribe(res =>
+			{
+					this.nav.push(LoginPage);
+			});
+	}
 }
 

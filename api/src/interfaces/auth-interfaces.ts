@@ -28,6 +28,7 @@ export interface UserToken {
 	id: number,
 	email: string,
 	username: string,
+	phoneNumber: string
 }
 
 export interface GetUserRequest {

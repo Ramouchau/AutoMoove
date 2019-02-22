@@ -65,7 +65,7 @@ export async function userLogin(data: UserLoginRequest, socket: Socket) {
 			socket.emit('login', response)
 			return;
 		}
-		let payload = { id: user.id, email: user.email, username: user.username }
+		let payload = { id: user.id, email: user.email, username: user.username, phoneNumber: user.phoneNumber }
 		response.token = jwt.sign(payload, '©oÜΓŠ')
 		response.email = user.email
 		response.username = user.username
@@ -76,7 +76,7 @@ export async function userLogin(data: UserLoginRequest, socket: Socket) {
 // Socket listener get-user
 export async function getUser(user: User, data: GetUserRequest, socket: Socket) {
 	let response: GetUserResponse = { code: 200, status: "ok" }
-	response.user = { email: user.email, username: user.username, id: user.id }
+	response.user = { email: user.email, username: user.username, id: user.id, phoneNumber: user.phoneNumber }
 	io.clients[user.id] = socket.id
 	socket.emit('get-user', response)
 }
